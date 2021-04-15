@@ -1,0 +1,15 @@
+all: README.md
+
+README.md: guessinggame.sh
+	echo "## Task from https://www.coursera.org/, part 4" > README.md
+	echo "*TASK [coursera.org/learn/unix/](https://www.coursera.org/learn/unix/peer/VvQhw/bash-make-git-and-github)*" >> README.md
+	echo "\n**Description**: To make a program with name *guessinggame.sh*. Person should should guess the number of files in the current directory. Progrfm will be closed after the right guess. Person must be informed if their guess is too high or too low. If the person's guess is correct then they should be congratulated and the program should end." >> README.md
+	echo -n "\n**Make date**: " >> README.md
+	date >> README.md
+	echo -n "\n**Number of lines in guessinggame.sh:** " >> README.md
+	grep -c '' guessinggame.sh >> README.md
+
+clean:
+	rm README.md
+
+
